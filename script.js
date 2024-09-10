@@ -41,6 +41,7 @@ function attack(att) {
 
 function updateHP(damage) {
   fungusHP -= damage;
+  if (fungusHP < 0) fungusHP = 0;
   let fungusHPDiv = document.getElementById("hp");
   let fungusHPBar = document.getElementById("hp-meter");
   fungusHPDiv.innerText = `${fungusHP} HP`;
@@ -54,6 +55,7 @@ function updateHP(damage) {
 
 function updateAP(cost) {
   actionPoints -= cost;
+  if (actionPoints < 0) actionPoints = 0;
   let apText = document.getElementById("ap-text");
   apText.innerText = `${actionPoints} AP`;
   if (actionPoints <= 0) {
